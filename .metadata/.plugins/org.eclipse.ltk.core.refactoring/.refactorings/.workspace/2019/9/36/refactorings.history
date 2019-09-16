@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;WaterCan/src/main/java/com/revature/WatrerPlant/Service/DeleteUser.java&apos;" deleteContents="false" description="Delete resource &apos;WaterCan/src/main/java/com/revature/WatrerPlant/Service/DeleteUser.java&apos;" element1="/WaterCan/src/main/java/com/revature/WatrerPlant/Service/DeleteUser.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1567674154237"/>
+</session>

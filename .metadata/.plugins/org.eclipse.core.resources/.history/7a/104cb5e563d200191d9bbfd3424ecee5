@@ -1,0 +1,33 @@
+package com.revature.WaterPlant.Validator;
+
+public class UserValidator {
+	
+	public boolean validateMobileNo(int mno) {
+		
+		String S;
+		
+		boolean bl = true;
+		while(bl) {
+		try {
+			S = mno;
+			choice = Integer.parseInt(S);
+			bl = false;
+			break;
+		} catch (Exception e) {
+			System.out.println(".......Invalid Option.....\n\nPlease Enter an Integer value");
+			bl = true;
+		}
+		
+		
+		
+		
+		return false;
+		
+		
+	}
+	
+	
+	
+	
+
+}

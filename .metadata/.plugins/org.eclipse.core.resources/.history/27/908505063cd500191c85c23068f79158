@@ -1,0 +1,30 @@
+package com.revature.WaterPlant.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.revature.WaterPlant.dao.UserDao;
+import com.revature.WaterPlant.dao.UserInterface;
+import com.revature.WaterPlant.model.User;
+
+public class AdminLoginServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String Name = request.getParameter("name");
+		String Pwd = request.getParameter("password");
+		PrintWriter out = response.getWriter();
+		out.println("name:" + Name);
+		out.println("Password:" + Pwd);
+
+		User user = null;
+		try {
+			UserInterface Udao = new UserDao();
+			bl = Udao.findByNameAndPassword(Name, Pwd);
+		}
+}}

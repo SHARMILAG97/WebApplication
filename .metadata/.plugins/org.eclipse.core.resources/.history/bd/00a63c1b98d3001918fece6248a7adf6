@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Online Booking</title>
+<!-- To include external JS  files -->
+<script src="js/app.js"></script>
+
+<script>
+	console.log("Hello");
+	//alert("JavaScript");
+</script>
+</head>
+<body>
+<h2> Welcome to WaterPlant </h2>
+
+   <a href="adminlogin.jsp">Login</a> <br/>
+	<a href="register.jsp">Register</a> <br/>
+	<a href="userlogin.jsp">List Books</a> <br/>
+	
+
+</body>
+</html>

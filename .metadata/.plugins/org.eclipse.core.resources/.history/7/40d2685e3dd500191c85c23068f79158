@@ -1,0 +1,24 @@
+package com.revature.WaterPlant.service;
+
+import com.revature.WaterPlant.dao.UserDao;
+import com.revature.WaterPlant.dao.UserInterface;
+import com.revature.WaterPlant.exception.DBException;
+
+
+public class AdminLogin {
+	
+	
+	public User login(String email, String password) throws ServiceException {
+		User user = null;
+		try {
+			UserDAO userDAO = new UserDAO();
+			user = userDAO.login(email, password);
+		} catch (DBException e) {
+			e.printStackTrace();
+			throw new ServiceException("Unable to login");
+			
+		}
+		return user;
+
+	}
+}

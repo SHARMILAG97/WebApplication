@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>UsersList</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.4.1.min.js">
+</script>
+<script type="text/javascript">
+
+function View()
+{
+	var url = "http://localhost:8080/waterplant_web/ViewUsersServlet";
+	$.getJSON(url, function(response){
+		var data = response;
+
+		User user = new User();
+		document.getElementById("tbl").innerHTML="";
+
+		for(let user of User){
+
+	        content += "<tr>";
+	        content += "<td>" + user.getId() + "</td>";
+	        content += "<td>" + user.getName() + "</td>";
+	        content += "<td>" + user.getMobileno()+ "</td>";
+	        content += "<td>" + user.getAddress() + "</td>";
+	        content += "</tr>";
+	    }
+		
+		document.getElementById("tbl").innerHTML = data;
+	});
+}
+
+
+</script>
+</head>
+<body>
+<button onclick="View()">View </button>
+<div id="tbl">
+
+
+</div>
+
+
+</body>
+</html>

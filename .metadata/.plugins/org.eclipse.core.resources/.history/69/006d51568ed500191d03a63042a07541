@@ -1,0 +1,30 @@
+package com.revature.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.revature.service.UserService;
+
+/**
+ * Servlet implementation class ViewUsersServlet
+ */
+public class ViewUsersServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	try {
+		UserService user = new UserService();
+		isValid=user.loginUser(mobile,Pwd);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	if(isValid==true) {
+		response.sendRedirect("useroperations.jsp");
+	}
+	else {
+         response.sendRedirect("index.jsp?message=Invalid Login Crendentials!!!");
+     }
+	}
+
+}

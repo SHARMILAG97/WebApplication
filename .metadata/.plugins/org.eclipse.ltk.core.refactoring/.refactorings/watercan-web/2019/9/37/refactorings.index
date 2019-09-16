@@ -1,0 +1,12 @@
+1568103920407	Rename resource 'admin.jsp'
+1568109924481	Move 'headers.jsp' to 'WEB-INF'
+1568109950963	Move 'adminlogin.jsp' to 'WEB-INF'
+1568109966101	Move 'index.jsp' to 'WEB-INF'
+1568110012738	Move 'adminlogin.jsp' to 'webapp'
+1568110022038	Move 'headers.jsp' to 'webapp'
+1568110029920	Move 'index.jsp' to 'webapp'
+1568110038101	Move 'userregister.jsp' to 'webapp'
+1568179230837	Move 'admin.jsp' to 'webapp'
+1568273855054	Move 'resources' to 'java'
+1568284379481	Delete element
+1568284890601	Copy compilation unit

@@ -1,0 +1,52 @@
+
+CREATE TABLE User_Details(
+User_id INT AUTO_INCREMENT PRIMARY KEY,
+User_name VARCHAR(20),
+Mobile_no BIGINT UNIQUE,
+Pwd VARCHAR(20),
+Address VARCHAR(20),STATUS VARCHAR(10) DEFAULT 'Active');
+
+SELECT * FROM User_Details;
+
+CREATE TABLE Reserve_Details(Date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+Reserve_id INT AUTO_INCREMENT PRIMARY KEY,
+User_id INT, User_name VARCHAR(20), Mobile_no BIGINT UNIQUE, 
+Reserve_Cans INT NOT NULL,Ordered_cans INT DEFAULT 0,STATUS VARCHAR(10) DEFAULT 'Reserved',
+FOREIGN KEY(User_id) REFERENCES User_Details(User_id));
+
+
+SELECT * FROM Reserve_Details;
+
+
+CREATE TABLE Order_Details(Date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+Order_id INT AUTO_INCREMENT PRIMARY KEY,
+Reserve_id INT NOT NULL DEFAULT 0,
+User_id INT, User_name VARCHAR(20), Mobile_no BIGINT, Address VARCHAR(20),
+Order_cans INT NOT NULL,
+FOREIGN KEY(User_id) REFERENCES User_Details(User_id));
+
+SELECT * FROM Order_Details;
+
+DROP TABLE Order_Details;
+
+
+CREATE TABLE AdminLogin(NAME VARCHAR(20),Pwd VARCHAR(20));
+
+INSERT INTO AdminLogin(NAME,Pwd) VALUES ('Naresh','naresh');
+
+SELECT * FROM AdminLogin;
+
+
+
+CREATE TABLE Stock_Details(
+Date_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+Stock_id INT PRIMARY KEY AUTO_INCREMENT,
+Updated_cans INT DEFAULT 0,
+Ordered_cans INT DEFAULT 0,
+Reserved_cans INT DEFAULT 0,
+Available_cans INT DEFAULT 0);
+ 
+SELECT * FROM Stock_Details;
+
+
+

@@ -1,0 +1,18 @@
+package com.revature.WaterPlant.service;
+
+import com.revature.WaterPlant.dao.UserDao;
+import com.revature.WaterPlant.dao.UserInterface;
+import com.revature.WaterPlant.exception.DBException;
+
+public class AdminLogin {
+	
+	try {
+		UserInterface Udao = new UserDao();
+	     Udao.findByNameAndPassword(Name, Pwd);
+	} catch (DBException e) {
+
+		e.printStackTrace();
+	}
+
+}
+}

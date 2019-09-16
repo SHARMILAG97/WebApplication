@@ -1,0 +1,89 @@
+package com.revature.WatrerPlant.Service;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+import com.revature.WaterPlant.dao.ReserveDao;
+import com.revature.WaterPlant.dao.ReserveInterface;
+import com.revature.WaterPlant.dao.StockDao;
+import com.revature.WaterPlant.dao.StockInterface;
+import com.revature.WaterPlant.exception.DBException;
+import com.revature.WaterPlant.model.User;
+
+public class ReserveCans {
+
+	public static void cansReserve(User u)    {
+		
+		User user = u;
+		int Availcans=0;
+		StockInterface Sdao = new StockDao();
+		ReserveInterface Rdao = new ReserveDao();
+		try {
+		
+        Rdao.getReserveId(user);
+        int Uid=user.getId();
+        System.out.println(Uid);
+		User stock = Sdao.getStock();
+		Availcans = Sdao.findOne();
+		System.out.println("No of Avilable Cans :"+Availcans);
+		System.out.println("Enter No of cans to Reserve");
+		Scanner sc = new Scanner(System.in);
+		int Reservecans=0;
+		boolean b=true;
+		String S=null;
+		while(b) {
+			boolean bl = true;
+			while(bl) {
+			try {
+				S = sc.next();
+				 Reservecans= Integer.parseInt(S);
+				bl = false;
+				break;
+			} catch (Exception e) {
+				System.out.println(".......Invalid Option.....\n\nPlease Enter an Integer value");
+				bl = true;
+			}
+			}
+			if(Availcans<Reservecans) {
+			System.out.println("Insufficient Watercans");
+			System.out.println("Please enter cans below :"+Availcans);
+			b=true;
+		}
+			else if(Reservecans>50) {
+				System.out.println("Please enter cans below  50");
+				b=true;
+			}
+
+			else if(Reservecans<=0) {
+				System.out.println("Please enter cans Above 0");
+				b=true;
+			}
+			else
+				b=false;
+		}
+		LocalDate d = stock.getDate();
+		int reservecan = stock.getReservecan();
+		ReserveInterface dao = new ReserveDao();
+		if (d != null) {
+			reservecan += Reservecans;
+			Availcans -= Reservecans;
+			Sdao.updateStockReserve(Availcans, reservecan);
+			dao.addReserve(user, Reservecans);
+			System.out.println("Reserved Successfully");
+			User user1=Rdao.getReserveId(user);
+		    int Rid=user1.getRId();
+			System.out.println("Your Reserve Id is: "+Rid);
+		} else {
+			Availcans -= Reservecans;
+			dao.addReserve(user, Reservecans);
+			Sdao.addStockOrder(Reservecans, Availcans);
+			System.out.println("Reserved Successfully");
+			System.out.println("Your Reserve Id is: "+user.getRId());
+		}
+	} catch (DBException e) {
+		e.printStackTrace();
+	}
+
+	}
+
+}

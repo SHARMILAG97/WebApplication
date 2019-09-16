@@ -1,0 +1,50 @@
+package com.revature.WaterPlant.Service;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+import com.revature.WaterPlant.dao.StockDao;
+import com.revature.WaterPlant.dao.StockInterface;
+import com.revature.WaterPlant.exception.DBException;
+import com.revature.WaterPlant.model.User;
+
+public class UpdateStock {
+
+	public static void StockUpdate() {
+		int Availcans = 0;
+
+		StockInterface Sdao = new StockDao();
+		try {
+			Availcans = Sdao.findOne();
+			User stock = Sdao.getStock();
+			System.out.println("No of Cans Available :" + Availcans);
+			System.out.println("Enter No of cans to update stock");
+			Scanner sc = new Scanner(System.in);
+			int Newcans = sc.nextInt();
+			LocalDate d = stock.getDate();
+			System.out.println(d);
+			int Addnewcans = stock.getCans();
+			int Addcans = 0;
+
+			if (d != null) {
+				Addnewcans += Newcans;
+				Addcans = Availcans + Newcans;
+				Sdao.updateStock(Addcans, Addnewcans);
+				System.out.println("Stock Updated Succesfully");
+				Addcans = Sdao.findOne();
+				System.out.println("No of Cans Available after Stock Update :" + Addcans);
+			} else {
+				Addcans = Availcans + Newcans;
+				System.out.println("Stock Updated Succesfully");
+				Sdao.addStock(Newcans, Addcans);
+				Addcans = Sdao.findOne();
+				System.out.println("No of Cans Available after Stock Update :" + Addcans);
+			}
+		} catch (DBException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+}

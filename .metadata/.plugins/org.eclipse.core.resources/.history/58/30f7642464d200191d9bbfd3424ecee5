@@ -1,0 +1,17 @@
+package com.revature.WaterPlant.Validator;
+
+public class UserValidator {
+	
+	public void validateMobileNo(Long mno) {
+		
+		
+	
+		
+		
+	}
+	
+	
+	
+	
+
+}

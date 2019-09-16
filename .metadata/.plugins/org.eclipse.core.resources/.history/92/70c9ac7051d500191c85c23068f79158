@@ -1,0 +1,21 @@
+package com.revature.service;
+
+import com.google.protobuf.ServiceException;
+
+public class AdminService {
+public boolean login(String name, String password) throws ServiceException {
+		
+		boolean isValid=true;
+		try {
+			UserInterface Udao = new UserDao();
+		     isValid=Udao.findByNameAndPassword(name, password);
+		} catch (DBException e) {
+			e.printStackTrace();
+			throw new ServiceException("Unable to login");
+			
+		}
+		return isValid;
+
+	}
+
+}
