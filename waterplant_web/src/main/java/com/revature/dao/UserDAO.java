@@ -13,12 +13,12 @@ import com.revature.util.ConnectionUtil;
 
 public class UserDAO implements UserInterface{
 
-public boolean findByNameAndPassword(String Uname,String Pwd) throws DBException  {
+public User findByNameAndPassword(String Uname,String Pwd) throws DBException  {
         
         Connection con = ConnectionUtil.getConnection();
         String sql = "select * from AdminLogin where Name = ? and Pwd = ?";
         PreparedStatement pst;
-        boolean isValid = false;
+        User admin = null;
 		try {
 			pst = con.prepareStatement(sql);
 			pst.setString(1,Uname);
@@ -27,18 +27,17 @@ public boolean findByNameAndPassword(String Uname,String Pwd) throws DBException
 	       
 	     
 	           if(rs.next()){
-	               isValid=true;
-	           }
-	           else
-	           {
-	               isValid = false;
+	        	   admin =  new User();
+	        	   admin.setName(rs.getString("Name"));
+	        	   admin.setPwd(rs.getString("Pwd"));
+	        	 
 	           }
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DBException("Cannot find",e);
 		}
         
-           return isValid;
+           return admin;
     }
 
 public  boolean findByUNameAndPassword(long mobileno,String Pwd) throws DBException  {
@@ -75,7 +74,7 @@ public  User getUser(long mobileno, String Pwd) throws DBException  {
 	Connection con = ConnectionUtil.getConnection();
     String sql = "select * from User_Details where Mobile_no = ? and Pwd = ?";
     PreparedStatement pst;
-    User user = new User();
+    User user = null;
 	try {
 		pst = con.prepareStatement(sql);
 		 pst.setLong(1,mobileno);
@@ -83,6 +82,7 @@ public  User getUser(long mobileno, String Pwd) throws DBException  {
 		    ResultSet rs = pst.executeQuery();
 			
 		    if(rs.next()) {
+		    	user =  new User();
 		    	user.setId(rs.getInt("User_id"));
 		    	user.setName(rs.getString("User_name"));
 		    	user.setAddress(rs.getString("Address"));
@@ -102,7 +102,7 @@ public  User getUser(long mobileno, String Pwd) throws DBException  {
 }
 
 
-public void AddUser(String name, String pwd, long mobileno, String address) throws DBException  {
+public void AddUser(User user) throws DBException  {
 	
 
 	 Connection con = ConnectionUtil.getConnection();
@@ -110,10 +110,10 @@ public void AddUser(String name, String pwd, long mobileno, String address) thro
 	 PreparedStatement pst;
 	try {
 		pst = con.prepareStatement(sql);
-		pst.setString(1,name);
-		 pst.setString(2,pwd);
-		 pst.setLong(3, mobileno);
-		 pst.setString(4, address);
+		pst.setString(1,user.getName());
+		 pst.setString(2,user.getPwd());
+		 pst.setLong(3, user.getMobileno());
+		 pst.setString(4,user.getAddress());
 		 pst.executeUpdate();
 	} catch (SQLException e) {
 		

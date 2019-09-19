@@ -1,0 +1,27 @@
+package com.revature.controller;
+
+import com.revature.exception.DBException;
+import com.revature.model.Reserve;
+import com.revature.service.UserService;
+
+public class ReserveController {
+
+	public static String reserve(Reserve rev, int rcans) {
+		
+		String errorMessage = null;
+		String Message = null;
+		UserService user=new UserService();;
+        Reserve r =null;
+       
+        try {
+			user.reserve(rev,rcans);
+		} catch (DBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        Message = "Reserved Successfully";
+
+		return null;
+	}
+
+}

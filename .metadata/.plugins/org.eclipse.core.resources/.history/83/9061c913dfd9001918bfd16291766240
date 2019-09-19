@@ -1,0 +1,10 @@
+package com.revature.dao;
+
+import com.revature.exception.DBException;
+import com.revature.model.Reserve;
+
+public interface ReserveInterface {
+	
+	public void addReserve(Reserve rev, int Reservecans) throws DBException;
+
+}

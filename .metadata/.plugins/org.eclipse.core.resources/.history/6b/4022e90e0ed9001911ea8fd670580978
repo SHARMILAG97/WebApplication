@@ -1,0 +1,26 @@
+package com.revature.controller;
+
+import com.google.protobuf.ServiceException;
+import com.revature.service.AdminService;
+
+public class AdminController {
+
+	public static String login(String name, String password) {
+	
+		String message = null;
+		
+		AdminService admin = new AdminService();
+		
+		try {
+			admin.login(name, password);
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return null;
+	}
+
+}

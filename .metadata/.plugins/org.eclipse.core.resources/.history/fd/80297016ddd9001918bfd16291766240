@@ -1,0 +1,16 @@
+package com.revature.model;
+
+import java.time.LocalDate;
+
+public class Reserve {
+	
+	private LocalDate Date ;
+	private int RId;
+	private int RUId;
+	private String RUName;
+	private String RUAddress;
+	private int Reservecans;
+	private String Rstatus;
+	
+
+}

@@ -36,7 +36,7 @@ var content="";
 
 </script>
 </head>
-<body>
+<body style="text-align:center">
 	<div id="users-section">
 		<table border="1" class="table table-condensed">
 			<thead>
@@ -58,6 +58,8 @@ var content="";
 	<script>
 View();
 </script>
+
+<button onclick="location.href='admin.jsp'">Back</button>
 
 </body>
 </html>

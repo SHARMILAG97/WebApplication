@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>UserLogin</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js">
+
+
+</script>
+</head>
+
+
+<body>
+
+<jsp:include page="headers.jsp"></jsp:include>
+<h2>USER LOGIN</h2>
+<script type="text/javascript">
+       function status()) {
+           alert("Logged successfully");
+           window.location.href = "useroperation.jsp";
+       }
+       </script>
+       <script>
+
+function login() {
+    //alert('register');
+    event.preventDefault();
+    var mobileno = document.getElementById("mobileno").value;
+    var password = document.getElementById("password").value;
+    var formData = "mobileno=" + mobileno + "&password=" + password;
+    console.log(formData);
+    //alert(formData);
+    var url = "http://localhost:8080/waterplant_webapp/UserLoginServlet?" + formData;
+    console.log(url);
+    //alert(url);
+    var formData = {};
+    $.get(url, function(response) {
+        console.log(response);
+        alert(response);
+        console.log(response.errorMessage);
+        var msg=JSON.parse(response);
+        alert(msg.errorMessage);
+        if (msg.errorMessage!=null) {
+            alert("Invalid Username/Password");
+        } else {
+            //alert("valid Username/Password");
+           status();
+        }
+    });
+
+</script>
+<%
+String message = request.getParameter("message");
+if (message != null){
+	out.println("<font color='red'>" + message + "</font>");
+}
+%>
+
+
+<form action="LoginUserServlet">
+<label>Mobile Number:</label>
+<input type="number" name="mobileno" id="mobileno" placeholder="Enter Mobile No" required autofocus/>
+<br/>
+
+<label>Password:</label>
+<input type="password" name="password" id="password" placeholder="Enter Password" required />
+<br/>
+<button type="submit" class="btn btn-success">Submit</button>
+<button type="reset" class="btn btn-danger" value="clear">clear</button>
+</form>
+
+
+
+
+</body>
+</html>

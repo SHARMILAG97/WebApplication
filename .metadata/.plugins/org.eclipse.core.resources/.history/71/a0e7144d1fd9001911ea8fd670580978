@@ -1,0 +1,18 @@
+package com.revature.validator;
+
+import com.revature.exception.ValidatorException;
+import com.revature.model.User;
+
+public class RegisterValidation {
+	
+	public  void validateBeforeRegister(User user) throws ValidatorException {
+		
+		String name = user.getName();
+          String numbers = "(.*[0-9].*)";
+		
+		if(name.matches(numbers)) {
+			
+			throw new ValidatorException("Name should not contain numbers!!!"); 
+
+}
+}

@@ -1,0 +1,10 @@
+package com.revature.controller;
+
+public class ReserveController {
+
+	public static String reserve(int rcans) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Water Plant</title>
+<!-- To include external JS  files -->
+<script src="js/app.js"></script>
+
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<jsp:include page="headers.jsp"></jsp:include>
+<form>
+<label>Enter No of Cans to Update</label>
+<label>Update Cans</label>
+<input type="number" name="updatecans" id="updatecans" placeholder="Enter Cans" required autofocus/>
+<br/>
+<input type="submit" value="Submit" class="btn btn-success">
+<button type="reset" class="btn btn-danger" value="clear">clear</button>
+</form>

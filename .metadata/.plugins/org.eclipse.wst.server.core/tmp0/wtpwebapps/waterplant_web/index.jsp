@@ -10,10 +10,10 @@
 
 
 </head>
-<body>
+<body style="text-align:center">
 <jsp:include page="headers.jsp"></jsp:include>
 
-<h2> Welcome to WaterPlant </h2>
+<h2> Welcome to WaterPlant </h2></br>
 <%
 String message = request.getParameter("message");
 if (message != null){
@@ -24,8 +24,8 @@ if (message != null){
   <div class="container-fluid">
         <div class="row">
             <div class="col">
-<a href="adminlogin.jsp">AdminLogin</a> <br/>
-	<a href="userregister.jsp">UserRegister</a> <br/>
+<a href="adminlogin.jsp">AdminLogin</a> <br/><br>
+	<a href="userregister.jsp">UserRegister</a> <br/></br>
 	<a href="userlogin.jsp">UserLogin</a> <br/>
 </div>
 </div>

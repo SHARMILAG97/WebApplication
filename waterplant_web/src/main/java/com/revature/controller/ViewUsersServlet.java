@@ -1,6 +1,7 @@
 package com.revature.controller;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.revature.model.User;
-import com.revature.service.UserService;
 
  
 public class ViewUsersServlet extends HttpServlet {
@@ -23,19 +23,14 @@ public class ViewUsersServlet extends HttpServlet {
 		List<User> list = null; 
 		
 	try {
-		UserService user = new UserService();
+		UserController user = new UserController();
 		list=user.viewUsers();
 		
 		
 		} catch (Exception e) {
 		e.printStackTrace();
 	}
-	if(list!=null) {
-		//response.sendRedirect("admin.jsp");
-	}
-	else {
-        // response.sendRedirect("index.jsp?message=Invalid Login Crendentials!!!");
-     }
+	
 	Gson gson = new Gson();
 	String json = gson.toJson(list);
 	

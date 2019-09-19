@@ -1,0 +1,14 @@
+package com.revature.model;
+
+public class Reserve {
+	
+	private Date;
+	private RId;
+	private RUId;
+	private RUName;
+	private RUAddress;
+	private Reservecans;
+	private Rstatus;
+	
+
+}

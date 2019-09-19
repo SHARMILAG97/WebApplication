@@ -1,0 +1,57 @@
+package com.revature.controller;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.revature.dao.UserDAO;
+import com.revature.dao.UserInterface;
+import com.revature.model.User;
+
+public class UserController {
+
+	public static String login(long mobile, String password) {
+	
+		String errorMessage = null;
+        UserInterface udao=new UserDAO();
+        User user=null;
+        
+        try {
+            
+            user=udao.getUser(mobile, password);
+            if(user==null) {
+                throw new Exception("Invalid email and Password");
+            }
+            
+        } catch (Exception e) {
+            
+            errorMessage = e.getMessage();
+            
+        }
+        
+        String json = null;
+       Gson gson = new Gson();
+       if(user!=null) {
+           json = gson.toJson(user);
+       }
+       else if ( user == null ) {
+           JsonObject obj = new JsonObject();
+           obj.addProperty("errorMessage", errorMessage);
+           json = obj.toString();
+       }
+        return json;
+        
+    }
+    
+     public static void main(String[] args) {
+            System.out.println("Test Case 1: Valid User login");
+            String validUserJson = UserController.login(8300823797l, "sharmi");
+            System.out.println(validUserJson);
+            
+            System.out.println("Test Case 2: Invalid User login");
+            String invalidUserJson = UserController.login(77777777777l, "invalidpassword");
+            System.out.println(invalidUserJson);
+            
+        }
+	
+	
+
+}

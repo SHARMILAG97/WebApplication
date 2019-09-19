@@ -1,0 +1,39 @@
+package com.revature.controller;
+
+import com.google.gson.JsonObject;
+import com.revature.model.Reserve;
+import com.revature.model.User;
+import com.revature.service.UserService;
+
+public class ReserveController {
+
+	public static String reserve(int rcans) {
+		
+		String errorMessage = null;
+		String Message = null;
+		UserService user=new UserService();;
+        Reserve rev =null;
+        try {
+        	
+        	rev = new Reserve();
+        	rev.setName(name);
+        	rev.setMobileno(mobile);
+        	rev.setPwd(password);
+        	rev.setAddress(address);
+            user.registerUser(rev);
+           Message="Success";  
+        }catch (Exception e) {
+          
+            errorMessage = e.getMessage();
+        }
+        JsonObject obj = new JsonObject();
+        
+        if(Message!=null)
+        	obj.addProperty("Message", Message);
+        else if(errorMessage!=null)
+        	obj.addProperty("errorMessage", errorMessage);
+
+		return null;
+	}
+
+}

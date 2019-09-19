@@ -1,0 +1,53 @@
+package com.revature.model;
+
+import java.time.LocalDate;
+
+public class Stock {
+	
+	private LocalDate Date;
+	private int Stockid;
+	private int SUpdatedcans;
+	private int SOrderedcans;
+	private int SReservedcans;
+	private int SAvailablecans;
+	
+	public int getSAvailablecans() {
+		return SAvailablecans;
+	}
+	public void setSAvailablecans(int sAvailablecans) {
+		SAvailablecans = sAvailablecans;
+	}
+	public LocalDate getDate() {
+		return Date;
+	}
+	public void setDate(LocalDate date) {
+		Date = date;
+	}
+	public int getStockid() {
+		return Stockid;
+	}
+	public void setStockid(int stockid) {
+		Stockid = stockid;
+	}
+	public int getSUpdatedcans() {
+		return SUpdatedcans;
+	}
+	public void setSUpdatedcans(int sUpdatedcans) {
+		SUpdatedcans = sUpdatedcans;
+	}
+	public int getSOrderedcans() {
+		return SOrderedcans;
+	}
+	public void setSOrderedcans(int sOrderedcans) {
+		SOrderedcans = sOrderedcans;
+	}
+	public int getSReservedcans() {
+		return SReservedcans;
+	}
+	public void setSReservedcans(int sReservedcans) {
+		SReservedcans = sReservedcans;
+	}
+	
+	
+
+}

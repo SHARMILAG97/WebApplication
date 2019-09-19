@@ -1,0 +1,20 @@
+package com.revature.controller;
+
+import com.google.gson.JsonObject;
+import com.revature.model.Reserve;
+import com.revature.service.UserService;
+
+public class ReserveController {
+
+	public static String reserve(Reserve rev2, int rcans) {
+		
+		String errorMessage = null;
+		String Message = null;
+		UserService user=new UserService();;
+        Reserve rev =null;
+       
+
+		return null;
+	}
+
+}
