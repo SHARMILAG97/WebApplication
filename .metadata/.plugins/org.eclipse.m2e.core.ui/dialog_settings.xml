@@ -84,6 +84,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Revature\23.9.19\waterplant_webapp_frontend-master"/>
+			<item value="D:\Revature\waterplant_webapp_frontend-master (1)"/>
 			<item value="D:\Revature\waterplant_webapp_core-master"/>
 			<item value="D:\Revature\waterplant_webapp_api-master"/>
 			<item value="D:\Revature\waterplant_webapp_frontend-master"/>

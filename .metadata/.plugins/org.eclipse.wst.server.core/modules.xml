@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <modules>
+  <module moduleId="org.eclipse.jst.j2ee.server:waterplant_webapp_frontend" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.j2ee.server:waterplant_webapp_frontend-master" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.j2ee.server:bankapp-naresh-master" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.j2ee.server:watercan-web" serverId="Tomcat v8.5 Server at localhost"/>

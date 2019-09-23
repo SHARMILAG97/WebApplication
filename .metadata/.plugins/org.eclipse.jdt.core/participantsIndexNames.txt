@@ -7,6 +7,8 @@ D:\Revature\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\358498359.inde
 \watercan-web\src\main\resources
 D:\Revature\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3846939408.index
 \watercan-web\src\main\java
+D:\Revature\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2512146570.index
+\waterplant_webapp_frontend\target\generated-sources\annotations
 D:\Revature\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2096573591.index
 \waterplant_webapp_api-master\src\main\java
 D:\Revature\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3723297629.index
