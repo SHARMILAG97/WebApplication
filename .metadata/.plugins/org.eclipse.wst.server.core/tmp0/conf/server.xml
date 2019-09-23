@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\waterplant_web" path="/waterplant_web" reloadable="true" source="org.eclipse.jst.j2ee.server:waterplant_web"/><Context docBase="D:\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\bankapp-naresh-master" path="/bankapp-naresh" reloadable="true" source="org.eclipse.jst.j2ee.server:bankapp-naresh-master"/></Host>
+      <Context docBase="D:\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\waterplant_web" path="/waterplant_web" reloadable="true" source="org.eclipse.jst.j2ee.server:waterplant_web"/><Context docBase="D:\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\bankapp-naresh-master" path="/bankapp-naresh" reloadable="true" source="org.eclipse.jst.j2ee.server:bankapp-naresh-master"/><Context docBase="D:\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\waterplant_webapp_frontend-master" path="/waterplant_webapp_frontend" reloadable="true" source="org.eclipse.jst.j2ee.server:waterplant_webapp_frontend-master"/></Host>
     </Engine>
   </Service>
 </Server>

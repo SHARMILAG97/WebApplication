@@ -40,10 +40,12 @@
 		<item value="org.sonatype.m2e.mavenarchiver.feature:0.17.4.201905300046"/>
 	</list>
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Revature\waterplant_webapp_frontend-master"/>
 		<item value="D:\Revature\bankapp-naresh-master"/>
 	</list>
 	<section name="ResourceNavigator">
 		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+		<item key="LINK_NAVIGATOR_TO_EDITOR" value="true"/>
 	</section>
 	<section name="CleanDialogSettings">
 		<item key="DIALOG_X_ORIGIN" value="433"/>
